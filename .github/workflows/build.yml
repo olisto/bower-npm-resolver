@@ -33,8 +33,8 @@ jobs:
         os: [ windows-latest, ubuntu-latest, macos-latest ]
         node: [ 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 ]
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         name: Set up NodeJS
         with:
           node-version: ${{ matrix.node }}
@@ -46,7 +46,7 @@ jobs:
         id: npm-version
         run: |
           echo "::set-output name=version::$(npm -v)"
-      - uses: actions/cache@v2
+      - uses: actions/cache@v5
         with:
           path: ${{ steps.npm-cache.outputs.dir }}
           key: ${{ runner.os }}-npm-${{ steps.npm-version.outputs.version }}
