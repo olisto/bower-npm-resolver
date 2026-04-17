@@ -27,24 +27,24 @@
     "npm": ">=1.0.0"
   },
   "dependencies": {
-    "cacache": "15.2.0",
-    "escape-string-regexp": "5.0.0",
+    "cacache": "^20.0.4",
+    "escape-string-regexp": "4.0.0",
     "fs-write-stream-atomic": "1.0.10",
-    "lodash": "4.17.21",
-    "mkdirp": "0.5.1",
-    "packument": "1.0.0",
-    "pacote": "11.3.1",
+    "lodash": "^4.18.1",
+    "mkdirp": "^0.5.6",
+    "packument": "^2.0.0",
+    "pacote": "^21.5.0",
     "q": "1.5.1",
     "requireg": "0.2.2",
-    "semver": "7.3.5",
-    "tar-fs": "2.1.1",
+    "semver": "^7.7.4",
+    "tar-fs": "^2.1.4",
     "validate-npm-package-name": "3.0.0"
   },
   "devDependencies": {
     "eslint": "7.32.0",
     "eslint-config-google": "0.14.0",
-    "jasmine": "3.6.1",
+    "jasmine": "^3.99.0",
     "jasmine-core": "3.8.0",
-    "tmp": "0.2.1"
+    "tmp": "^0.2.5"
   }
 }
