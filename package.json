@@ -2,17 +2,10 @@
   "name": "bower-npm-resolver",
   "version": "0.11.0",
   "description": "Use npm as a registry for your Bower Dependencies",
-  "main": "dist/resolver.js",
+  "main": "src/resolver.js",
   "scripts": {
-    "clean": "gulp clean",
-    "lint": "gulp lint",
-    "test": "gulp test",
-    "tdd": "gulp tdd",
-    "build": "gulp build",
-    "release": "gulp release:minor",
-    "release:patch": "gulp release:patch",
-    "release:minor": "gulp release:minor",
-    "release:major": "gulp release:major"
+    "lint": "npx eslint .",
+    "test": "jasmine"
   },
   "repository": {
     "type": "git",
@@ -48,21 +41,10 @@
     "validate-npm-package-name": "3.0.0"
   },
   "devDependencies": {
-    "@babel/core": "7.14.8",
-    "@babel/preset-env": "7.14.9",
-    "@babel/register": "7.14.5",
     "eslint": "7.32.0",
     "eslint-config-google": "0.14.0",
-    "fancy-log": "1.3.3",
-    "gulp": "4.0.2",
-    "gulp-babel": "8.0.0",
-    "gulp-bump": "3.2.0",
-    "gulp-eslint": "6.0.0",
-    "gulp-git": "2.10.1",
-    "gulp-jasmine": "4.0.0",
     "jasmine": "3.6.1",
     "jasmine-core": "3.8.0",
-    "rimraf": "3.0.2",
     "tmp": "0.2.1"
   }
 }
