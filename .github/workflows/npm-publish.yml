@@ -1,0 +1,43 @@
+# This workflow will lint, run tests and then publish a package to NPM when a release is created
+# For more information see: https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages
+
+name: Node.js lint, test and publish
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+  release:
+    types:
+      - published
+
+jobs:
+  test-and-publish:
+    runs-on: ubuntu-latest
+    env:
+      NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          registry-url: 'https://registry.npmjs.org'
+      - name: check version against release tag
+        if: ${{ github.event_name == 'release' }}
+        uses: dreusel/match-tag-to-package-version@master
+        with:
+          TAG_PREFIX: v
+      - name: install dependencies
+        run: npm install
+      - name: lint
+        run: npm run lint
+      - name: build
+        run: npm run build
+      - name: test
+        run: npm test
+      - name: publish
+        if: ${{ github.event_name == 'release' }}
+        run: npm publish
